@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WedPlan - Your elegant wedding planning companion. Manage your budget, vendors, guests and wedding checklist in one place." />
+  <title>WedPlan | Wedding Planning Portal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p><i class="fa-solid fa-heart"></i> Your dream wedding starts here — plan it with love.</p>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="#home" class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-heart"></i></span>
+      <span>Wed<span class="brand-accent">Plan</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#dashboard" class="nav-link">Dashboard</a>
+      <a href="#budget" class="nav-link">Budget</a>
+      <a href="#vendors" class="nav-link">Vendors</a>
+      <a href="#guests" class="nav-link">Guests</a>
+      <a href="#checklist" class="nav-link">Checklist</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="fa-regular fa-moon"></i>
+      </button>
+      <button class="btn btn-outline" id="loginButton">
+        <i class="fa-regular fa-user"></i> Sign In
+      </button>
+      <a href="#dashboard" class="btn btn-primary">Plan My Wedding <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home / Hero -->
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> YOUR LOVE STORY, BEAUTIFULLY PLANNED</span>
+        <h1>Every love story deserves a <em>perfect beginning.</em></h1>
+        <p class="hero-description">
+          From the first checklist to the final dance, bring every detail of your special day together in one beautiful place.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#dashboard" class="btn btn-primary btn-large">Start Planning <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#vendors" class="btn btn-light btn-large"><i class="fa-regular fa-compass"></i> Explore Vendors</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="avatar-stack" aria-hidden="true">
+            <span class="avatar avatar-one">A</span>
+            <span class="avatar avatar-two">R</span>
+            <span class="avatar avatar-three">S</span>
+            <span class="avatar avatar-four"><i class="fa-solid fa-heart"></i></span>
+          </div>
+          <div>
+            <strong>Made for your forever</strong>
+            <p>Every little detail, thoughtfully organized.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-frame">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85"
+            alt="Romantic wedding ceremony decorated with flowers"
+          >
+          <div class="floating-card floating-date">
+            <span class="floating-icon"><i class="fa-regular fa-calendar-heart"></i></span>
+            <div>
+              <small>YOUR SPECIAL DAY</small>
+              <strong id="heroWeddingDate">Set your date</strong>
+            </div>
+          </div>
+          <div class="floating-card floating-progress">
+            <span class="progress-icon"><i class="fa-solid fa-check"></i></span>
+            <div>
+              <strong>Make it memorable</strong>
+              <small>Your planning journey starts now</small>
+            </div>
+          </div>
+        </div>
+        <div class="hero-decoration decoration-one">♡</div>
+        <div class="hero-decoration decoration-two">✦</div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-strip" aria-label="Wedding planning highlights">
+      <div class="stat-item">
+        <span class="stat-icon"><i class="fa-solid fa-list-check"></i></span>
+        <div><strong>One Place</strong><span>All your wedding plans</span></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon"><i class="fa-solid fa-wallet"></i></span>
+        <div><strong>Smart Budget</strong><span>Track every expense</span></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon"><i class="fa-solid fa-camera"></i></span>
+        <div><strong>Trusted Vendors</strong><span>Find your perfect team</span></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon"><i class="fa-solid fa-heart"></i></span>
+        <div><strong>Less Stress</strong><span>More beautiful memories</span></div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR WEDDING AT A GLANCE</span>
+          <h2>Planning <em>Dashboard</em></h2>
+          <p>Keep your special day organized, one lovely step at a time.</p>
+        </div>
+        <button class="btn btn-outline" id="editWeddingButton">
+          <i class="fa-solid fa-pen"></i> Edit Wedding Details
+        </button>
+      </div>
+
+      <div class="wedding-overview card">
+        <div class="overview-copy">
+          <span class="status-pill"><i class="fa-solid fa-heart"></i> YOUR BIG DAY</span>
+          <h3 id="coupleNames">Your Love Story</h3>
+          <p><i class="fa-solid fa-location-dot"></i> <span id="weddingLocation">Your dream destination</span></p>
+          <p><i class="fa-regular fa-calendar"></i> <span id="dashboardWeddingDate">Choose your wedding date</span></p>
+        </div>
+        <div class="countdown-area">
+          <span class="countdown-label">COUNTING DOWN TO FOREVER</span>
+          <div class="countdown-grid">
+            <div class="countdown-box"><strong id="countDays">000</strong><span>Days</span></div>
+            <div class="countdown-box"><strong id="countHours">00</strong><span>Hours</span></div>
+            <div class="countdown-box"><strong id="countMinutes">00</strong><span>Minutes</span></div>
+            <div class="countdown-box"><strong id="countSeconds">00</strong><span>Seconds</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-stats">
+        <article class="metric-card card">
+          <div class="metric-top"><span>Total Budget</span><i class="fa-solid fa-wallet"></i></div>
+          <h3 id="dashboardBudget">₹0</h3>
+          <p>Your planned wedding budget</p>
+          <a href="#budget">Manage budget <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="metric-card card">
+          <div class="metric-top"><span>Guest List</span><i class="fa-solid fa-users"></i></div>
+          <h3 id="dashboardGuests">0</h3>
+          <p>Guests added so far</p>
+          <a href="#guests">Manage guests <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="metric-card card">
+          <div class="metric-top"><span>Tasks Completed</span><i class="fa-solid fa-list-check"></i></div>
+          <h3 id="dashboardTasks">0 / 0</h3>
+          <p id="dashboardTaskMessage">Your checklist awaits</p>
+          <a href="#checklist">View checklist <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="metric-card card">
+          <div class="metric-top"><span>Saved Vendors</span><i class="fa-solid fa-store"></i></div>
+          <h3 id="dashboardVendors">0</h3>
+          <p>Your favorite wedding professionals</p>
+          <a href="#vendors">Explore vendors <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Budget Planner -->
+    <section class="section budget-section" id="budget">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PLAN SMART, CELEBRATE MORE</span>
+          <h2>Your Wedding <em>Budget</em></h2>
+          <p>Set your budget, organize expenses and keep your finances on track.</p>
+        </div>
+      </div>
+
+      <div class="budget-layout">
+        <div class="budget-summary card">
+          <div class="card-heading">
+            <div>
+              <span class="mini-label">YOUR FINANCIAL OVERVIEW</span>
+              <h3>Budget Summary</h3>
+            </div>
+            <span class="card-heading-icon"><i class="fa-solid fa-chart-pie"></i></span>
+          </div>
+
+          <label for="totalBudget">Total wedding budget (₹)</label>
+          <div class="input-with-icon">
+            <span>₹</span>
+            <input type="number" id="totalBudget" min="0" value="500000" placeholder="Enter total budget">
+          </div>
+
+          <div class="budget-numbers">
+            <div><span>Estimated Expenses</span><strong id="totalExpenses">₹0</strong></div>
+            <div><span>Remaining Balance</span><strong id="remainingBudget">₹5,00,000</strong></div>
+          </div>
+
+          <div class="budget-progress-track">
+            <div class="budget-progress-fill" id="budgetProgressFill"></div>
+          </div>
+          <div class="budget-progress-labels"><span>Budget used</span><strong id="budgetUsedPercent">0%</strong></div>
+
+          <div class="budget-note"><i class="fa-regular fa-lightbulb"></i> Tip: Keep a small reserve for unexpected wedding expenses.</div>
+        </div>
+
+        <div class="expense-panel card">
+          <div class="card-heading">
+            <div>
+              <span class="mini-label">EVERY RUPEE COUNTS</span>
+              <h3>Expense Tracker</h3>
+            </div>
+            <button class="btn btn-primary btn-small" id="addExpenseButton"><i class="fa-solid fa-plus"></i> Add Expense</button>
+          </div>
+
+          <form id="expenseForm" class="inline-form hidden">
+            <div class="form-group">
+              <label for="expenseName">Expense name</label>
+              <input type="text" id="expenseName" placeholder="e.g. Venue booking" required>
+            </div>
+            <div class="form-group">
+              <label for="expenseCategory">Category</label>
+              <select id="expenseCategory" required>
+                <option value="Venue">Venue</option>
+                <option value="Catering">Catering</option>
+                <option value="Photography">Photography</option>
+                <option value="Decoration">Decoration</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="expenseAmount">Amount (₹)</label>
+              <input type="number" id="expenseAmount" min="1" placeholder="Amount" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-light" id="cancelExpenseButton">Cancel</button>
+          </form>
+
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead><tr><th>Expense</th><th>Category</th><th>Amount</th><th>Action</th></tr></thead>
+              <tbody id="expenseTableBody">
+                <tr class="empty-row"><td colspan="4">No expenses yet. Add your first expense!</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vendors -->
+    <section class="section vendors-section" id="vendors">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">MEET YOUR WEDDING DREAM TEAM</span>
+          <h2>Find Your Perfect <em>Vendors</em></h2>
+          <p>Discover talented professionals to make your celebration unforgettable.</p>
+        </div>
+        <button class="btn btn-outline" id="showAllVendorsButton">View All Vendors <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="vendor-toolbar card">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="vendorSearch" placeholder="Search photographers, venues, decorators...">
+        </div>
+        <select id="vendorCategoryFilter" aria-label="Filter vendors by category">
+          <option value="all">All Categories</option>
+          <option value="Venue">Venues</option>
+          <option value="Photography">Photography</option>
+          <option value="Catering">Catering</option>
+          <option value="Decoration">Decoration</option>
+          <option value="Makeup">Makeup Artists</option>
+          <option value="Music">Music & Entertainment</option>
+        </select>
+        <select id="vendorSort" aria-label="Sort vendors">
+          <option value="featured">Featured</option>
+          <option value="rating">Highest Rated</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+
+      <div class="vendor-grid" id="vendorGrid">
+        <!-- Vendor cards are rendered by script.js -->
+      </div>
+
+      <div class="vendor-empty hidden" id="vendorEmpty">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>No vendors found</h3>
+        <p>Try another search term or category.</p>
+      </div>
+
+      <div class="vendor-detail-panel card hidden" id="vendorDetailPanel">
+        <button class="icon-button close-detail" id="closeVendorDetail" aria-label="Close vendor details"><i class="fa-solid fa-xmark"></i></button>
+        <div id="vendorDetailContent"></div>
+      </div>
+    </section>
+
+    <!-- Guest List -->
+    <section class="section guests-section" id="guests">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">SAVE A SEAT FOR EVERY SPECIAL PERSON</span>
+          <h2>Your Wedding <em>Guest List</em></h2>
+          <p>Keep guest details, RSVP responses and seating plans organized.</p>
+        </div>
+      </div>
+
+      <div class="guest-stats">
+        <div class="guest-stat card"><span class="guest-stat-icon"><i class="fa-solid fa-users"></i></span><div><span>Total Guests</span><strong id="guestTotal">0</strong></div></div>
+        <div class="guest-stat card"><span class="guest-stat-icon confirmed"><i class="fa-solid fa-check"></i></span><div><span>Confirmed</span><strong id="guestConfirmed">0</strong></div></div>
+        <div class="guest-stat card"><span class="guest-stat-icon pending"><i class="fa-regular fa-clock"></i></span><div><span>Pending RSVP</span><strong id="guestPending">0</strong></div></div>
+        <div class="guest-stat card"><span class="guest-stat-icon declined"><i class="fa-solid fa-xmark"></i></span><div><span>Declined</span><strong id="guestDeclined">0</strong></div></div>
+      </div>
+
+      <div class="guest-panel card">
+        <div class="card-heading">
+          <div>
+            <span class="mini-label">YOUR PEOPLE, YOUR MOMENTS</span>
+            <h3>Guest Management</h3>
+          </div>
+          <button class="btn btn-primary" id="addGuestButton"><i class="fa-solid fa-user-plus"></i> Add Guest</button>
+        </div>
+
+        <form id="guestForm" class="guest-form hidden">
+          <div class="form-group">
+            <label for="guestName">Guest name</label>
+            <input type="text" id="guestName" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label for="guestEmail">Email address</label>
+            <input type="email" id="guestEmail" placeholder="guest@example.com">
+          </div>
+          <div class="form-group">
+            <label for="guestSide">Guest of</label>
+            <select id="guestSide"><option value="Bride">Bride</option><option value="Groom">Groom</option><option value="Both">Both</option></select>
+          </div>
+          <div class="form-group">
+            <label for="guestRSVP">RSVP status</label>
+            <select id="guestRSVP"><option value="Pending">Pending</option><option value="Confirmed">Confirmed</option><option value="Declined">Declined</option></select>
+          </div>
+          <div class="form-group">
+            <label for="guestTable">Table / Seating</label>
+            <input type="text" id="guestTable" placeholder="e.g. Table 2">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Guest</button>
+            <button type="button" class="btn btn-light" id="cancelGuestButton">Cancel</button>
+          </div>
+        </form>
+
+        <div class="guest-toolbar">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="guestSearch" placeholder="Search guests by name...">
+          </div>
+          <select id="guestRSVPFilter" aria-label="Filter guests by RSVP">
+            <option value="all">All RSVP Statuses</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Pending">Pending</option>
+            <option value="Declined">Declined</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead><tr><th>Guest</th><th>Guest Of</th><th>RSVP</th><th>Seating</th><th>Actions</th></tr></thead>
+            <tbody id="guestTableBody">
+              <tr class="empty-row"><td colspan="5">No guests added yet. Start your guest list!</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wedding Checklist -->
+    <section class="section checklist-section" id="checklist">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ONE LITTLE STEP AT A TIME</span>
+          <h2>Your Wedding <em>Checklist</em></h2>
+          <p>Turn your wedding to-do list into a stress-free plan.</p>
+        </div>
+        <button class="btn btn-primary" id="addTaskButton"><i class="fa-solid fa-plus"></i> Add Task</button>
+      </div>
+
+      <div class="checklist-layout">
+        <div class="checklist-main card">
+          <div class="checklist-progress-header">
+            <div><h3>Planning Progress</h3><p id="checklistProgressText">0% completed</p></div>
+            <div class="checklist-progress-circle" id="checklistProgressCircle"><span id="checklistProgressNumber">0%</span></div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="checklistProgressFill"></div></div>
+
+          <form id="taskForm" class="inline-form hidden">
+            <div class="form-group">
+              <label for="taskName">Task name</label>
+              <input type="text" id="taskName" placeholder="e.g. Book wedding photographer" required>
+            </div>
+            <div class="form-group">
+              <label for="taskCategory">Category</label>
+              <select id="taskCategory">
+                <option value="Planning">Planning</option>
+                <option value="Venue">Venue</option>
+                <option value="Ceremony">Ceremony</option>
+                <option value="Guests">Guests</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-light" id="cancelTaskButton">Cancel</button>
+          </form>
+
+          <div class="checklist-filters">
+            <button class="filter-chip active" data-task-filter="all">All Tasks</button>
+            <button class="filter-chip" data-task-filter="pending">To Do</button>
+            <button class="filter-chip" data-task-filter="completed">Completed</button>
+          </div>
+          <div class="task-list" id="taskList"></div>
+        </div>
+
+        <aside class="checklist-aside">
+          <div class="inspiration-card card">
+            <span class="inspiration-icon"><i class="fa-solid fa-heart"></i></span>
+            <h3>A little reminder</h3>
+            <p>Your wedding doesn't need to be perfect. It just needs to be yours.</p>
+            <span class="inspiration-flourish">With love, WedPlan ♡</span>
+          </div>
+          <div class="milestone-card card">
+            <h3><i class="fa-regular fa-calendar-check"></i> Planning Milestones</h3>
+            <div class="milestone-item"><span class="milestone-dot"></span><div><strong>12+ months before</strong><p>Set your budget and book the venue.</p></div></div>
+            <div class="milestone-item"><span class="milestone-dot"></span><div><strong>6–9 months before</strong><p>Choose vendors and send save-the-dates.</p></div></div>
+            <div class="milestone-item"><span class="milestone-dot"></span><div><strong>1–3 months before</strong><p>Confirm RSVPs and finalize details.</p></div></div>
+            <div class="milestone-item"><span class="milestone-dot"></span><div><strong>Wedding week</strong><p>Relax, celebrate and enjoy your moment.</p></div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Wedding Timeline -->
+    <section class="section timeline-section" id="timeline">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE DAY YOU'LL ALWAYS REMEMBER</span>
+          <h2>Your Wedding <em>Timeline</em></h2>
+          <p>Plan the flow of your celebration, from getting ready to the final dance.</p>
+        </div>
+        <button class="btn btn-outline" id="addTimelineButton"><i class="fa-solid fa-plus"></i> Add Event</button>
+      </div>
+
+      <form id="timelineForm" class="timeline-form card hidden">
+        <div class="form-group"><label for="timelineTime">Time</label><input type="time" id="timelineTime" required></div>
+        <div class="form-group"><label for="timelineEvent">Event</label><input type="text" id="timelineEvent" placeholder="e.g. Wedding ceremony" required></div>
+        <div class="form-group"><label for="timelineLocation">Location</label><input type="text" id="timelineLocation" placeholder="e.g. Main garden"></div>
+        <button type="submit" class="btn btn-primary">Save Event</button>
+        <button type="button" class="btn btn-light" id="cancelTimelineButton">Cancel</button>
+      </form>
+
+      <div class="timeline-list card" id="timelineList"></div>
+    </section>
+
+    <!-- Message Board -->
+    <section class="section messages-section" id="messages">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">A PLACE FOR YOUR THOUGHTS</span>
+          <h2>Wedding <em>Message Board</em></h2>
+          <p>Save ideas, special notes and little reminders as you plan.</p>
+        </div>
+      </div>
+
+      <div class="message-layout">
+        <form id="messageForm" class="message-compose card">
+          <span class="mini-label">CAPTURE THE LITTLE THINGS</span>
+          <h3>Leave a note</h3>
+          <div class="form-group"><label for="messageTitle">Title</label><input type="text" id="messageTitle" placeholder="e.g. Floral inspiration" required></div>
+          <div class="form-group"><label for="messageText">Your note</label><textarea id="messageText" rows="4" placeholder="Write your idea or reminder..." required></textarea></div>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Save Note</button>
+        </form>
+        <div class="message-board" id="messageBoard"></div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section gallery-section" id="gallery">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">A LITTLE INSPIRATION FOR YOUR BIG DAY</span>
+          <h2>Moments Worth <em>Dreaming Of</em></h2>
+          <p>Explore a few wedding inspirations while planning your celebration.</p>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-large">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80" alt="Beautiful wedding ceremony setting" loading="lazy">
+          <figcaption>Beautiful Beginnings</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80" alt="Romantic wedding table decoration" loading="lazy">
+          <figcaption>Elegant Details</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80" alt="Wedding celebration and happy couple" loading="lazy">
+          <figcaption>Forever Moments</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&q=80" alt="Wedding flowers and table styling" loading="lazy">
+          <figcaption>Floral Romance</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Wedding Details Modal -->
+    <div class="modal-overlay hidden" id="weddingModal" role="dialog" aria-modal="true" aria-labelledby="weddingModalTitle">
+      <div class="modal-card">
+        <button type="button" class="modal-close" data-close-modal="weddingModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <span class="eyebrow">YOUR LOVE STORY</span>
+        <h2 id="weddingModalTitle">Wedding Details</h2>
+        <p>Personalize your wedding dashboard.</p>
+        <form id="weddingDetailsForm">
+          <div class="form-group"><label for="partnerOne">Partner One</label><input type="text" id="partnerOne" placeholder="First name"></div>
+          <div class="form-group"><label for="partnerTwo">Partner Two</label><input type="text" id="partnerTwo" placeholder="Second name"></div>
+          <div class="form-group"><label for="weddingDate">Wedding Date</label><input type="date" id="weddingDate"></div>
+          <div class="form-group"><label for="weddingCity">Wedding Location</label><input type="text" id="weddingCity" placeholder="City or venue"></div>
+          <button type="submit" class="btn btn-primary btn-full">Save Wedding Details</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Login / Register Modal -->
+    <div class="modal-overlay hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <div class="modal-card auth-card">
+        <button type="button" class="modal-close" data-close-modal="authModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="auth-brand"><i class="fa-solid fa-heart"></i> WedPlan</div>
+        <h2 id="authTitle">Welcome to WedPlan</h2>
+        <p id="authSubtitle">Sign in to keep your wedding plans close.</p>
+
+        <div class="auth-tabs">
+          <button type="button" class="auth-tab active" data-auth-tab="login">Sign In</button>
+          <button type="button" class="auth-tab" data-auth-tab="register">Create Account</button>
+        </div>
+
+        <form id="authForm">
+          <div class="form-group hidden" id="authNameGroup"><label for="authName">Full Name</label><input type="text" id="authName" placeholder="Your full name"></div>
+          <div class="form-group"><label for="authEmail">Email Address</label><input type="email" id="authEmail" placeholder="you@example.com" required></div>
+          <div class="form-group"><label for="authPassword">Password</label><input type="password" id="authPassword" placeholder="At least 6 characters" minlength="6" required></div>
+          <button type="submit" class="btn btn-primary btn-full" id="authSubmitButton">Sign In</button>
+          <p class="form-message" id="authMessage" aria-live="polite"></p>
+        </form>
+        <p class="demo-notice"><i class="fa-solid fa-circle-info"></i> Demo authentication only. Do not use a real password.</p>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="appToast" role="status" aria-live="polite">
+      <i class="fa-solid fa-circle-check"></i>
+      <span id="toastMessage">Changes saved</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <span class="brand-icon"><i class="fa-solid fa-heart"></i></span>
+          <span>Wed<span class="brand-accent">Plan</span></span>
+        </a>
+        <p>Thoughtfully planning the beginning of your forever. Every detail, every moment, every memory.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#budget">Budget Planner</a>
+        <a href="#vendors">Find Vendors</a>
+        <a href="#guests">Guest List</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Plan Your Day</h4>
+        <a href="#checklist">Wedding Checklist</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#messages">Message Board</a>
+        <a href="#gallery">Inspiration Gallery</a>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>A little wedding inspiration</h4>
+        <p>Keep your planning journey full of lovely ideas.</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Your email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+        <small id="newsletterMessage" aria-live="polite"></small>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> WedPlan. Made with <i class="fa-solid fa-heart"></i> for your forever.</p>
+      <a href="#home">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- Project JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
